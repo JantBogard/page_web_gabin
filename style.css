@@ -232,21 +232,31 @@ html, body {
     padding:0;
     margin:0;
     font-family: 'Ubuntu Condensed', sans-serif, Georgia ;
-  }
-  
-  .container {
+}
+
+.container {
     width: 100%;
     height: 100vh; 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 50px auto;
+    grid-template-rows: 50px 5fr .5fr;
 
+}
+
+.footer {
+    grid-column: 1/ -1;
+    background-color: #3F3351;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 @media only screen and (max-width: 911px) {
     .container {
         grid-template-columns: 1fr 2fr;
-        grid-template-rows: none;
+        grid-template-rows: 5fr .5fr;
     }
 
     .header {
@@ -257,11 +267,12 @@ html, body {
     .content {
         grid-column: 2 ;
         grid-row: 1 / -1;
+        background-position: left 50%;
     }
 
     .header-elem {
-        grid-template-rows:  repeat(12, 1fr);
-        grid-row-gap: 2px;
+        height: 98%;
+        grid-template-rows: 50px 1fr 50px 10px;
     }
 
     .surveyform {
@@ -273,41 +284,24 @@ html, body {
         grid-column: 1/-1;
         grid-row: 2 / span 2;
         text-align: center;
+        display: flex;
+        align-items: center;
     }
     
     .social {
         grid-column: 1/-1;
-        grid-row: 4;
+        grid-row: 3;
+    }
+
+    .footer {
+        grid-column: 2;
+        grid-row: 2;
     }
 }
 
-
-/* Extra small devices (phones, 600px and down) */
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
     .content {
-        background-position: left 50%;
+        background-position: 18% 50%;
     }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .content {
-        background-position: left 50%;
-    }
-
-}
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-      
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .content {
-        background-position: 60%;
-    }
-
 }
 
